@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-
-import { BsSearch } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { BsSearch } from "react-icons/bs";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");

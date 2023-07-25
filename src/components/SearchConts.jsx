@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Videos } from "./";
+import { Category, Videos } from "./";
 import Loader from "./Loader";
 import { useParams } from "react-router-dom";
 
 const SearchConts = () => {
-  const [videos, setVideos] = useState(null);
+  const [selectCategory, setSelectCategory] = useState([]);
+  const [videos, setVideos] = useState([]);
   const { searchTerm } = useParams();
 
   useEffect(() => {
@@ -22,10 +23,14 @@ const SearchConts = () => {
 
   return (
     <main id="main">
-      <section id="search">
-        <h2>
-          <em>{searchTerm}</em>에 대한 검색 결과입니다.
-        </h2>
+      <section id="aside">
+        <Category
+          selectCategory={selectCategory}
+          setSelectCategory={setSelectCategory}
+        />
+      </section>
+      <section id="contents">
+        <h2>검색어 : {searchTerm}</h2>
         <Videos videos={videos} />
       </section>
     </main>

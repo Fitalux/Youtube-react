@@ -9,7 +9,7 @@ const VideoCard = ({ video }) => {
           src={video.snippet.thumbnails.medium.url}
           alt={video.snippet.title}
         />
-        <h3>{video.snippet.title.slice(0, 20)}</h3>
+        <h3>{video.snippet.title}</h3>
       </Link>
     </div>
   );

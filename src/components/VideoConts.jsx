@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Loader from "./Loader";
 
 const VideoConts = () => {
-  const [videoDetail, setVideoDetail] = useState([]);
+  const [videoDetail, setVideoDetail] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -12,11 +12,18 @@ const VideoConts = () => {
       `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${id}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
     )
       .then((response) => response.json())
-      .then((result) => setVideoDetail(result.items))
+      .then((result) => {
+        console.log(result);
+        setVideoDetail(result.items[0]);
+      })
       .catch((error) => console.log(error));
   }, [id]);
 
-  if (!videoDetail.snippet) return <Loader />;
+  if (!videoDetail?.snippet) return <Loader />;
+  const {
+    snippet: { title },
+    statistics: { viewCount },
+  } = videoDetail;
 
   return (
     <section className="videoConts">
@@ -27,11 +34,8 @@ const VideoConts = () => {
               <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} />
             </div>
             <div className="desc">
-              <div className="top__desc">
-                <h3>{videoDetail[0].snippet.title}</h3>
-                <span>조회수 : {videoDetail[0].statistics.viewCount}회</span>
-              </div>
-              <p>{videoDetail[0].snippet.description}</p>
+              <h3>{title}</h3>
+              <span>조회수 : {viewCount}회</span>
             </div>
           </div>
           <div className="right"></div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { VideoCard } from "./";
+import VideoCard from "./VideoCard";
 
 const Videos = ({ videos }) => {
   return (

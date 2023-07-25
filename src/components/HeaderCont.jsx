@@ -8,7 +8,7 @@ const HeaderCont = () => {
     <header id="header">
       <h1 className="logo">
         <PiYoutubeLogoFill className="icon" />
-        <Link to="/">Recommed Youtube</Link>
+        <Link to="/">API Youtube</Link>
       </h1>
       <SearchBar />
     </header>
