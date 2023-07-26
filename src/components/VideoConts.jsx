@@ -3,6 +3,15 @@ import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
 
+const shortViews = (views) => {
+  const shortter = new Intl.NumberFormat("en", {
+    notation: "compact",
+    compactDisplay: "short",
+  });
+
+  return shortter.format(views);
+};
+
 const VideoConts = () => {
   const [videoDetail, setVideoDetail] = useState(null);
   const { id } = useParams();
@@ -21,9 +30,11 @@ const VideoConts = () => {
 
   if (!videoDetail?.snippet) return <Loader />;
   const {
-    snippet: { title },
+    snippet: { title, description },
     statistics: { viewCount },
   } = videoDetail;
+
+  const shorttedViews = shortViews(viewCount);
 
   return (
     <section className="videoConts">
@@ -35,8 +46,9 @@ const VideoConts = () => {
             </div>
             <div className="desc">
               <h3>{title}</h3>
-              <span>조회수 : {viewCount}회</span>
+              <span>조회수 : {shorttedViews}회</span>
             </div>
+            <div className="video_desc">{description.slice(0, 500)}...</div>
           </div>
           <div className="right"></div>
         </div>

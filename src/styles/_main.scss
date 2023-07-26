@@ -102,8 +102,12 @@ $max-lines: 1; // 최대 줄 수
 }
 
 .video__conts {
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  margin-top: 6%;
+  margin-bottom: 3%;
+
   .left {
     width: calc(100% - 340px);
 
@@ -123,24 +127,30 @@ $max-lines: 1; // 최대 줄 수
     }
 
     .desc {
+      display: flex;
+      justify-content: space-between;
       margin-top: 1%;
       margin-bottom: 2%;
       color: #fff;
 
       h3 {
         padding-top: 7px;
-        font-size: 26px;
+        font-size: 20px;
         word-break: keep-all;
         margin-bottom: 2%;
       }
 
       span {
-        display: flex;
-        justify-content: flex-end;
         padding-top: 7px;
         font-size: 20px;
         margin-bottom: 2%;
       }
+    }
+
+    .video_desc {
+      background-color: rgb(230, 225, 250);
+      padding: 15px;
+      border-radius: 10px;
     }
   }
 
