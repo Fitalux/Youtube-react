@@ -1,15 +1,18 @@
 ﻿# Youtube-react
 
- <img src="https://github.com/Fitalux/Portfolio/blob/main/src/assets/image/main.png" />
+ <img src="https://github.com/Fitalux/Youtube-react/blob/main/src/styles/display.png" />
 
 # VIEW SITE
+
 https://fitalux-apisite-youtube.netlify.app
 
 # DESC
+
 react에 youtube API를 사용하여 제작한 유튜브 API 사이트입니다. <br>
 useState와 useEffect, useParams를 사용하여 유튜브 API 데이터와 서치 기능을 구현하였으며, react player 기능을 사용하여 섬네일 클릭 시 영상이 재생될 수 있도록 제작하였습니다.<br><br><br>
 
- # 사용 스택
+# 사용 스택
+
 React <br>
 : React는 페이스북에서 개발한 사용자 인터페이스(UI) 라이브러리로, 웹 애플리케이션의 UI를 구축하기 위해 사용됩니다. <br>
 React는 컴포넌트 기반으로 동작하며, 각 컴포넌트는 독립적이고 재사용 가능한 코드 조각입니다. React는 가상 DOM을 활용하여 효율적으로 UI를 업데이트하고, 단방향 데이터 흐름을 따르는 컴포넌트 기반 아키텍처를 제공합니다.<br><br><br>
